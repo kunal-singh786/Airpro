@@ -1,0 +1,215 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!--Owl Carousel CSS-->
+    <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}">
+
+    <!--FontAwesome CSS-->
+    <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+
+          <!-- Favicon -->
+    <!--<link href="{% static 'app/img/favicon.ico' %}" rel="icon">-->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+      <!--<link href="{% static 'app/css/style1.css'%}" rel="stylesheet">-->
+
+
+    <title>Airpro | {% block title %} {% endblock title %} </title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+     <div class="container">
+       <a class="navbar-brand" href="/">Airpro</a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="/">Home</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle text-white" href="#" id="electronicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Products
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="electronicsDropdown"
+                 <li><a class="dropdown-item" href="{% url 'airtools' %}">Air Tools</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Aircraft Tools</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Oil Pulse Tool</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Air ScrewDriver</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Air Compressor</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Spray Guns and Accesories</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Presure Tank and Pump</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Hand Tools</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Body Shop Tools</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Auto Repair Tools</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Coardless Tools</a></li>
+                 <li><a class="dropdown-item" href="{% url 'mobile' %}">Electric Screwdriver</a></li>
+
+             </ul>
+           </li>
+           <!--<li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Fashion
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
+               <li><a class="dropdown-item" href="#">Top Wear</a></li>
+               <li><a class="dropdown-item" href="#">Bottom Wear</a></li>
+             </ul>
+           </li>-->
+             <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="{% url 'video' %}">Videos</a>
+           </li>
+             <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="{% url 'company' %}">Company</a>
+           </li>
+             <li class="nav-item mx-2">
+                <a href="{% url 'companyprofile' %}" class="nav-link text-white">Profile</a>
+            </li>
+             <li class="nav-item mx-2">
+                <a href="{% url 'catalog' %}" class="nav-link text-white">Catalog</a>
+            </li>
+
+         </ul>
+         <form class="d-flex">
+           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+           <button class="btn btn-warning" type="submit">S</button>
+         </form>
+         <div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <!--<li class="nav-item dropdown mx-2">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Kunal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
+                <li><a class="dropdown-item" href="{% url 'changepassword' %}">Change Password</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+            <li class="nav-item mx-2">
+             <a href="{% url 'add-to-cart' %}" class="nav-link text-white"><span class="badge bg-danger">4</span> Cart </a>
+            </li>
+            <li class="nav-item mx-2">
+             <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+            </li>-->
+            <li class="nav-item mx-2">
+             <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
+            </li>
+          </ul>
+         </div>
+       </div>
+     </div>
+    </nav>
+    {% block banner_slider %} {% endblock banner_slider %}
+    {% block livesale %} {% endblock livesale %}
+    {% block main-content %} {% endblock main-content %}
+
+    <!-- Start Footer -->
+    <footer class="container-fluid bg-dark text-center p-2 mt-5">
+        <small class="text-white">Copyright &copy; 2022 || Welcome to AirproPnumetics || </small>
+        <img src="{% static 'app/images/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
+    </footer> <!-- End Footer -->
+    <div class="container-fluid bg-dark text-secondary mt-3 pt-3">
+        <div class="row px-xl-3 pt-3">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
+                <!--<p class="mb-4"></p>-->
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>House No. 4, Gali No.1 , Block A, Sneh Vihar,Bhondsi, Gurugram, Haryana, 122102</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@airpropneumatics.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>9990016008</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Quick Shop</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <!--<a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>-->
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <!--<a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>-->
+                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <!--<a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>-->
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <!--<a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>-->
+                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
+                        <p>Please Sign up via your Email id</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Your Email Address">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary">Sign Up</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!--<h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>-->
+                        <!--<div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-secondary">
+                    &copy; <a class="text-primary" href="#">Domain</a>. All Rights Reserved. Designed
+                    by
+                    <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+        </div>-->
+    </div>
+    <!-- Footer End -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <script src="{% static 'app/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'app/js/all.min.js' %}"></script>
+    <script src="{% static 'app/js/myscript.js' %}"></script>
+  </body>
+</html>
